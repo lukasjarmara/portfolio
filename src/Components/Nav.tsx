@@ -1,35 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Nav: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="flex flex-col justify-between	items-center px-16 max-w-10 h-screen gap-3 bg-secondaryLight">
-      <div className="flex flex-col gap-3 lg:m-5 sm:m-3">
-        <a href="#home">
-          <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark">
-            home
+    <nav className="relative flex flex-row justify-between items-center px-6 py-4 bg-secondaryLight">
+      <div className="flex flex-row gap-3">
+        <button onClick={toggleMenu} className="lg:hidden p-3">
+          <span className="material-symbols-outlined text-3xl text-dark">
+            menu
           </span>
-        </a>
-        <a href="#code">
-          <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark">
-            code
-          </span>
-        </a>
-        <a href="#about">
-          <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark">
-            person
-          </span>
-        </a>
-        <a href="#contact">
-          <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark">
-            mail
-          </span>
-        </a>
+        </button>
+        <div className="hidden lg:flex flex-row gap-3">
+          <a href="#home">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+              home
+            </span>
+          </a>
+          <a href="#code">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+              code
+            </span>
+          </a>
+          <a href="#about">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+              person
+            </span>
+          </a>
+          <a href="#contact">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+              mail
+            </span>
+          </a>
+        </div>
       </div>
-      <div className="flex flex-col gap-3 lg:m-5 sm:m-3">
-        <span
-          style={{ display: "inline-block" }}
-          className="p-3 hover:rounded-full hover:bg-active "
-        >
+      <div className="flex flex-row gap-3">
+        <span className="p-3 hover:rounded-full hover:bg-active transition duration-300">
           <a href="https://github.com/lukasjarmara">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,14 +50,11 @@ const Nav: React.FC = () => {
             </svg>
           </a>
         </span>
-        <span
-          style={{ display: "inline-block" }}
-          className="p-3 hover:rounded-full hover:bg-active "
-        >
+        <span className="p-3 hover:rounded-full hover:bg-active transition duration-300">
           <a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-jarmara-9b5131239/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-10 h-10 fill-dark lg:w-12 lg:h-12 "
+              className="w-10 h-10 fill-dark lg:w-12 lg:h-12"
               viewBox="0 0 24 24"
             >
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
@@ -55,6 +62,43 @@ const Nav: React.FC = () => {
           </a>
         </span>
       </div>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-secondaryLight transition-opacity duration-300 ease-in-out opacity-100">
+          <button onClick={toggleMenu} className="absolute top-5 right-5 p-3">
+            <span className="material-symbols-outlined text-3xl text-dark">
+              close
+            </span>
+          </button>
+          <a
+            href="#home"
+            onClick={toggleMenu}
+            className="w-full text-center py-6 text-3xl hover:bg-active transition duration-300"
+          >
+            Home
+          </a>
+          <a
+            href="#code"
+            onClick={toggleMenu}
+            className="w-full text-center py-6 text-3xl hover:bg-active transition duration-300"
+          >
+            Code
+          </a>
+          <a
+            href="#about"
+            onClick={toggleMenu}
+            className="w-full text-center py-6 text-3xl hover:bg-active transition duration-300"
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            onClick={toggleMenu}
+            className="w-full text-center py-6 text-3xl hover:bg-active transition duration-300"
+          >
+            Contact
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
