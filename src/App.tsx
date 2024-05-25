@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <div className="bg-light w-screen h-screen">
       <Nav />
       <main className="">
-        <Hero />a
+        <Hero />
       </main>
     </div>
   );

@@ -17,29 +17,29 @@ const Nav: React.FC = () => {
         </button>
         <div className="hidden lg:flex flex-row gap-3">
           <a href="#home">
-            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 rounded-full hover:bg-active text-dark transition duration-300">
               home
             </span>
           </a>
           <a href="#code">
-            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 rounded-full hover:bg-active text-dark transition duration-300">
               code
             </span>
           </a>
           <a href="#about">
-            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 rounded-full hover:bg-active text-dark transition duration-300">
               person
             </span>
           </a>
           <a href="#contact">
-            <span className="material-symbols-outlined text-5xl font-semibold p-3 hover:rounded-full hover:bg-active text-dark transition duration-300">
+            <span className="material-symbols-outlined text-5xl font-semibold p-3 rounded-full hover:bg-active text-dark transition duration-300">
               mail
             </span>
           </a>
         </div>
       </div>
       <div className="flex flex-row gap-3">
-        <span className="p-3 hover:rounded-full hover:bg-active transition duration-300">
+        <span className="p-3 rounded-full hover:bg-active transition duration-300">
           <a href="https://github.com/lukasjarmara">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Nav: React.FC = () => {
             </svg>
           </a>
         </span>
-        <span className="p-3 hover:rounded-full hover:bg-active transition duration-300">
+        <span className="p-3 rounded-full hover:bg-active transition duration-300">
           <a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-jarmara-9b5131239/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
