@@ -30,8 +30,9 @@ const Nav: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex flex-row justify-between items-center px-6 py-4 bg-secondaryLight transition-transform duration-300 ${
+      className={`fixed z-50 flex flex-row justify-between items-center px-6 py-4 bg-secondaryLight transition-transform duration-300 ${
         isVisible ? "transform translate-y-0" : "transform -translate-y-full"
+      } ${isOpen ? "inset-0" : " top-0 left-0 right-0"}
       }`}
     >
       <div className="flex flex-row gap-3">
