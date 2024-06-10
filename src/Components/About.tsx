@@ -2,7 +2,10 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <div className="bg-light h-screen pt-28 flex flex-col items-center">
+    <div
+      className="bg-light h-screen pt-28 flex flex-col items-center"
+      id="about"
+    >
       <p className="text-2xl font-bold mb-4">My Skills</p>
       <div className="w-3/4 mb-4 flex flex-col justify-center items-center sm:flex-row gap-4 ">
         <img
