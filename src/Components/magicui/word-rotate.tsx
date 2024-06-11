@@ -24,6 +24,7 @@ export default function WordRotate({
   className,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
