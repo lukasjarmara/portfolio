@@ -2,12 +2,14 @@ import React from "react";
 import Hero from "./Components/Hero.tsx";
 import About from "./Components/About.tsx";
 import { Dock, DockIcon } from "./Components/magicui/dock.tsx";
+import Work from "./Components/Work.tsx";
 
 const App: React.FC = () => {
   return (
     <div className="bg-light w-full">
       <main className="w-max-full">
         <Hero />
+        <Work />
         <About />
       </main>
       <nav className="fixed bottom-5 w-full">
@@ -20,7 +22,7 @@ const App: React.FC = () => {
             </a>
           </DockIcon>
           <DockIcon size={40}>
-            <a href="#code">
+            <a href="#work">
               <span className="material-symbols-outlined font-semibold text-dark">
                 code
               </span>
