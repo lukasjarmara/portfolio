@@ -8,10 +8,11 @@ const projects = [
     link: "https://example.com/project1",
   },
   {
-    imgSrc: "placeholder-image-2.jpg",
-    title: "Project 2",
-    description: "Description of Project 2",
-    link: "https://example.com/project2",
+    imgSrc: "/Assets/Chatroom.jpg",
+    title: "Chatroom",
+    description:
+      "A chatroom application built with React and Firebase. Includes real-time messaging and room selection",
+    link: "https://jarmara-chatroom.web.app/",
   },
   {
     imgSrc: "placeholder-image-3.jpg",
@@ -47,7 +48,7 @@ const Work: React.FC = () => {
               <img
                 src={project.imgSrc}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-t-lg transition-transform duration-300"
+                className="w-full h-64 object-contain rounded-t-lg transition-transform duration-300"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>

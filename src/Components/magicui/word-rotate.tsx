@@ -1,14 +1,11 @@
-"use client";
-
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import cn from "classnames";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
-import React from "react";
-import { useEffect, useState } from "react";
 
 interface WordRotateProps {
   words: string[];
   duration?: number;
-  framerProps?: HTMLMotionProps<"h1">;
+  framerProps?: object;
   className?: string;
 }
 
@@ -26,12 +23,32 @@ export default function WordRotate({
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, duration);
+    let interval;
 
-    // Clean up interval on unmount
-    return () => clearInterval(interval);
+    const startInterval = () => {
+      interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, duration);
+    };
+
+    // Start the interval when the component mounts
+    startInterval();
+
+    // Reset the interval when the tab is switched back
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        clearInterval(interval);
+        startInterval();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Clean up interval and event listener on unmount
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [words, duration]);
 
   return (
