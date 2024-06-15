@@ -8,14 +8,7 @@ const Hero: React.FC = () => {
       id="home"
     >
       <h1 className="text-5xl font-bold">Hi, I'm Lukas</h1>
-      <WordRotate
-        words={[
-          "A Front-End Developer",
-          "A UI/UX Designer",
-          "A Problem Solver",
-        ]}
-        className="text-3xl"
-      />
+      <WordRotate className="text-3xl" />
     </div>
   );
 };

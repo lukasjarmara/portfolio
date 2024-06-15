@@ -6,14 +6,14 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 interface WordRotateProps {
-  words: string[];
+  words?: string[];
   duration?: number;
   framerProps?: HTMLMotionProps<"h1">;
   className?: string;
 }
 
 export default function WordRotate({
-  words,
+  words = ["A Front-End Developer", "A UI/UX Designer", "A Problem Solver"],
   duration = 2500,
   framerProps = {
     initial: { opacity: 0, y: -50 },

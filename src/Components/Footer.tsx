@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark flex flex-row justify-between p-10">
-      <a href="mailto:info@example.com" className="text-blue-500">
+    <footer className="bg-dark flex flex-row justify-between items-center p-10 sm:z-50">
+      <a href="mailto:lukas.jarmara@gmail.com" className="text-light">
         lukas.jarmara@gmail.com
       </a>
 
