@@ -3,7 +3,7 @@ import Hero from "./Components/Hero.tsx";
 import About from "./Components/About.tsx";
 import { Dock, DockIcon } from "./Components/magicui/dock.tsx";
 import Work from "./Components/Work.tsx";
-
+import Footer from "./Components/Footer.tsx";
 const App: React.FC = () => {
   return (
     <div className="bg-light w-full">
@@ -44,6 +44,7 @@ const App: React.FC = () => {
           </DockIcon>
         </Dock>
       </nav>
+      <Footer />
     </div>
   );
 };
