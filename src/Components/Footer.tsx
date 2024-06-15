@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark flex flex-row justify-between p-4">
+    <footer className="bg-dark flex flex-row justify-between p-10">
       <a href="mailto:info@example.com" className="text-blue-500">
-        info@example.com
+        lukas.jarmara@gmail.com
       </a>
 
       <div className="flex">
