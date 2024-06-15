@@ -1,4 +1,5 @@
 {
+  "homepage": "https://lukasjarmara.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "framer-motion": "^11.2.10",
+    "gh-pages": "^6.1.1",
     "lib-utils-ts": "^0.0.0-test",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
