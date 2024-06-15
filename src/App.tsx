@@ -7,14 +7,14 @@ import Footer from "./Components/Footer.tsx";
 
 const App: React.FC = () => {
   return (
-    <div className="bg-light w-full">
-      <main className="w-max-full">
+    <div className="bg-light w-full min-h-screen flex flex-col">
+      <main className="flex-grow">
         <Hero />
         <Work />
         <About />
       </main>
 
-      <nav className="fixed bottom-5 left-0 right-0 max-w-40 mx-auto z-8">
+      <nav className="fixed bottom-5 left-0 right-0 max-w-40 mx-auto sm:z-50">
         <Dock magnification={60} distance={140}>
           <DockIcon size={40}>
             <a href="#home">
@@ -39,7 +39,8 @@ const App: React.FC = () => {
           </DockIcon>
         </Dock>
       </nav>
-      <div className="w-full z-10 sm:absolute">
+
+      <div className="relative z-10 lg:z-0">
         <Footer />
       </div>
     </div>
