@@ -17,21 +17,30 @@ const App: React.FC = () => {
       <nav className="fixed bottom-5 left-0 right-0 max-w-40 mx-auto sm:z-50">
         <Dock magnification={60} distance={140}>
           <DockIcon size={40}>
-            <a href="#home">
+            <a
+              href="#home"
+              className="h-full w-full flex justify-center items-center"
+            >
               <span className="material-symbols-outlined font-semibold text-dark">
                 home
               </span>
             </a>
           </DockIcon>
           <DockIcon size={40}>
-            <a href="#work">
+            <a
+              href="#work"
+              className="h-full w-full flex justify-center items-center"
+            >
               <span className="material-symbols-outlined font-semibold text-dark">
                 code
               </span>
             </a>
           </DockIcon>
           <DockIcon size={40}>
-            <a href="#about">
+            <a
+              href="#about"
+              className="h-full w-full flex justify-center items-center"
+            >
               <span className="material-symbols-outlined font-semibold text-dark">
                 person
               </span>

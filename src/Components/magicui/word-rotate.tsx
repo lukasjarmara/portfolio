@@ -2,8 +2,7 @@
 
 import cn from "classnames";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface WordRotateProps {
   words?: string[];
@@ -26,12 +25,39 @@ export default function WordRotate({
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, duration);
+    let interval: NodeJS.Timeout | null = null;
 
-    // Clean up interval on unmount
-    return () => clearInterval(interval);
+    const startInterval = () => {
+      interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, duration);
+    };
+
+    const stopInterval = () => {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        setIndex(0); // Reset index when user returns to the tab
+        startInterval();
+      } else {
+        stopInterval();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Start interval initially
+    startInterval();
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      stopInterval();
+    };
   }, [words, duration]);
 
   return (
