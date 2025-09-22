@@ -7,22 +7,9 @@ const projects = [
     link: "https://futureportyouth.com/",
   },
   {
-    title: "Chatroom",
-    description:
-      "A chatroom application built with React and Firebase. Includes real-time messaging and room selection",
-    link: "https://jarmara-chatroom.web.app/",
-  },
-  {
-    title: "Habit Tracker",
-    description:
-      "A basic habit tracker with a login using Firebase API, build in React",
-    link: "https://jarmara-habit-tracker.web.app/",
-  },
-  {
-    title: "Thoughts dump",
-    description:
-      "A simple app to dump whatever you are thinking. Built with React and Firebase",
-    link: "https://jarmara-thought-dump.web.app/",
+    title: "fox.cz",
+    description: "A website used for selling gadgets to the VW ID. Buzz Car",
+    link: "https://fox.cz/",
   },
 ];
 
