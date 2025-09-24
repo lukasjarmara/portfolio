@@ -11,6 +11,12 @@ const projects = [
     description: "A website used for selling gadgets to the VW ID. Buzz Car",
     link: "https://fox.cz/",
   },
+  {
+    title: "Budvar Collaboration Signal Festival",
+    description:
+      "Fullstack application for the 2024 Signal Festival projected to the Prague's City Library",
+    link: "https://www.signalfestival.com/historie/2024/budejovicky-budvar-produktova-kampan/",
+  },
 ];
 
 const Work: React.FC = () => {
